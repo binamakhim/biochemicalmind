@@ -1,0 +1,161 @@
+{{ define "head" }}
+  {{ if .IsHome }}
+  <style type="text/css">
+    .feature-image {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.25), 
+            rgba(0, 0, 0, 0.25)
+        ), url('{{ "images/bukif.jpg" | absURL }}');
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        transition: height 0.3s ease-in-out, background-position 0.3s ease-in-out;
+        border-radius: 3px;
+    }
+
+    .feature-image-text {
+        margin-top: 20px;
+        color: #ffffff;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+        font-weight: 600;
+    }
+
+    @media (min-width: 1200px) {
+        .feature-image {
+            background-position: 0% 30%;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .feature-image {
+            height: 150px;
+            background-position: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .feature-image {
+            height: 120px;
+            background-position: center;
+        }
+    }
+
+    @media (max-width: 200px) {
+        .feature-image {
+            height: 100px;
+            background-position: center;
+        }
+    }
+</style>
+
+  {{ else }}
+    <style type="text/css">
+      .feature-image {
+        background-color: #F8F8F8;;
+        border-bottom: 1px dotted #BBB;
+        height: 150px;
+      }
+    </style>
+  {{ end }}
+{{ end }}
+
+{{ define "header" }}
+  {{ if .IsHome }}
+    <header class="feature-image">
+        <div class="feature-image-text white-shadow-text">
+            {{ partial "header-about-me" . }}
+        </div>
+    </header>
+  {{ else }}
+    <header class="abc">
+        <div class="abc_text">
+            <h1 class="text-center">{{ .Title }}</h1>
+        </div>   
+    </header>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="container mt-4 mb-4 recent-posts">
+      {{ if .IsHome }}
+      
+     <!-- About Me Section -->
+
+     <section class="about-me-section text-center" >
+      <a href="/about"><img src="{{ "https://images2.imgbox.com/fc/bf/EoguhscL_o.png" | absURL }}" alt="Profile Picture" class="profile-pic mb-4"></a>
+      <p class="about-me-description"> In the heart of the Himalayan breeze, where the mountain whispers secrets to the skies, lives Bukiphool. A daughter of Nepal’s rugged peaks, she embraces the world with a heart full of wonder and a spirit of unyielding determination.</p>
+      <p class="about-me-interests">
+        <strong>Science | Psychology | Nature</strong></a>
+        
+    </p>
+  </section>
+
+
+      <!-- Last 4 Posts Section -->
+       <section class="last-posts-section mt-5">
+        <section class="new-posts-section text-center">
+          <h3 class="section-title">Check My New Posts</h3>
+        </section>
+          {{ $recentPosts := first 2 (where site.RegularPages "Params.hidden" "ne" true) }}
+          {{ range $recentPosts }}
+          <article class="post">
+            <a class="title" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+            {{ partial "post-meta" . }}
+            <div>
+                {{ .Summary }} 
+            </div>
+            <div>
+                <a href="{{ .Permalink }}" class="btn btn-outline-secondary" role="button">READ</a>
+            </div>
+          </article>
+          
+          {{ end }}
+          <div class ="centers"><a href="/post" class="btn btn-primary">CHECK OUT MORE</a>
+          </div>
+      </section>
+
+      {{ else }}
+      {{ $pages := .Pages }}
+      {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+      {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) 5}}
+      {{ range $paginator.Pages }}
+      <article class="post">
+        <a class="post-link" >
+            <div class="post-content">
+                <h2 class="post-title">{{ .Title }}</h2>
+                <span class="post-date">
+                    <i class="far fa-calendar-alt"></i>&nbsp;{{- .Date.Format "Jan 2, 2006" -}}
+                </span>
+                <p class="post-excerpt">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="btn btn-primary">READ MORE</a>
+            </div>
+        </a>
+    </article>
+    
+      
+      {{ end }}
+      <div class="d-flex justify-content-center">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+      {{ end }}
+       
+  </div>
+  {{ partial "sidebar" . }}
+  <script>
+    window.addEventListener('load', function() {
+        // Give some time for the Twitter script to load
+        setTimeout(function() {
+            // Check if the Twitter post is visible
+            var twitterPost = document.getElementById('twitter-post');
+            var instagramPost = document.getElementById('instagram-post');
+
+            // Twitter embed might be blocked or not loaded
+            if (twitterPost.offsetHeight === 0) {
+                twitterPost.style.display = 'none';
+                instagramPost.style.display = 'block';
+            }
+        }, 3000); // Adjust timing as needed
+    });
+</script>
+{{ end }}
