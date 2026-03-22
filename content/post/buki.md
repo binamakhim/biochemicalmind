@@ -12,34 +12,16 @@ tags:
 A poem for bukiphool <!--more--> 
 
 ---
-Dear Buki Phool,
+Dear Buki Phool,    
+I envy you.  
+You bloom,  
+you fade,  
+leaving no trace....  
 
-
-I envy you.
-
-
-You bllom,
-
-
-you fade,
-
-leaving no trace....
-
-
-
-
-Teach me how to disappear
-
-
-into the air,
-
-
-like you do
-
-
-after you wither...
-
-
+Teach me how to disappear  
+into the air,    
+like you do  
+after you wither...  
 
 #theflowerofmountain
 #bukiphool
