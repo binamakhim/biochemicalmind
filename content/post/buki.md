@@ -1,6 +1,6 @@
 ---
 title: "new test"
-date:2026-03-22T12:36:51+05:45
+date: 2026-03-22T12:36:51+05:45
 draft: false
 categories:
   - blogs
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-A poem of a flower named Tall Pearly Everlasting, bukiphool in Nepal <!--more--> 
+A poem for bukiphool <!--more--> 
 
 ---
 Dear Buki Phool,
@@ -22,3 +22,6 @@ Teach me how to disappear
 into the air,
 like you do
 after you wither...
+
+#theflowerofmountain
+#bukiphool
