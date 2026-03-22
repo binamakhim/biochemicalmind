@@ -1,5 +1,5 @@
 ---
-title: "new test"
+title: "Buki Phool"
 date: 2026-03-22T12:36:51+05:45
 draft: false
 categories:
