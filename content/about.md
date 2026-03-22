@@ -4,7 +4,7 @@ date = "2022-04-09"
 menu = "main"
 +++
 
-In the heart of the Himalayan breeze, where the mountain whispers secrets to the skies, lives a soul as vibrant as the wildflowers that dance in the highland meadows. I am Bukiphool, a daughter of Nepal’s rugged peaks, where the land meets the clouds and the rivers sing lullabies to the stars.
+In the heart of the Himalayan breeze, where the mountain whispers secrets to the skies, lives a soul as vibrant as the wildflowers that dance in the highland meadows. I am Buki Phool, a daughter of Nepal’s rugged peaks, where the land meets the clouds and the rivers sing lullabies to the stars.
 
 My spirit is woven from the earth’s finest threads, and in the tapestry of nature’s beauty, I find my rhythm. With each dawn that touches the snowy summits, I embrace the world with a heart full of wonder. Nature is my canvas, and I paint my days with the colors of adventure and the scent of blooming hopes.
 
